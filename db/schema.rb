@@ -10,39 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524120751) do
+ActiveRecord::Schema.define(version: 20170410125010) do
 
   create_table "blood_examination_reports", force: :cascade do |t|
     t.string   "hemoglobin"
-    t.text     "total_rbc_count"
-    t.text     "total_wbc_count"
-    t.text     "ae_count"
-    t.text     "platelet_count"
-    t.text     "neutrophils"
-    t.text     "lymphocytes"
-    t.text     "eosinophils"
-    t.text     "monocytes"
-    t.text     "basophils"
-    t.text     "esr"
+    t.string   "total_rbc_count"
+    t.string   "total_wbc_count"
+    t.string   "ae_count"
+    t.string   "platelet_count"
+    t.string   "neutrophils"
+    t.string   "lymphocytes"
+    t.string   "eosinophils"
+    t.string   "monocytes"
+    t.string   "basophils"
+    t.string   "esr"
+    t.integer  "patient_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "gravindex_test_reports", force: :cascade do |t|
-    t.text     "gravindex_test_report"
+    t.string   "gravindex_test_report"
+    t.integer  "patient_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
 
   create_table "hiv_test_reports", force: :cascade do |t|
-    t.text     "hiv_test1"
-    t.text     "hiv_test2"
+    t.string   "hiv_test1"
+    t.string   "hiv_test2"
+    t.integer  "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "mountex_reports", force: :cascade do |t|
-    t.text     "mountext_test"
+    t.string   "mountext_test"
+    t.integer  "patient_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -120,28 +124,23 @@ ActiveRecord::Schema.define(version: 20170524120751) do
     t.date     "present_date"
     t.string   "mobile_no"
     t.string   "referred_by"
+    t.string   "patient_test"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "patient_test"
   end
 
   create_table "stool_examinationreports", force: :cascade do |t|
-    t.text     "color"
-    t.text     "reaction"
-    t.text     "viscosity"
-    t.text     "mucous"
-    t.text     "blood"
-    t.text     "occult_blood"
-    t.text     "ova"
-    t.text     "cyst"
+    t.string   "color"
+    t.string   "reaction"
+    t.string   "viscosity"
+    t.string   "mucous"
+    t.string   "blood"
+    t.string   "occult_blood"
+    t.string   "ova"
+    t.string   "cyst"
+    t.integer  "patient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "urine_examination_reports", force: :cascade do |t|
@@ -163,9 +162,9 @@ ActiveRecord::Schema.define(version: 20170524120751) do
     t.string   "casts"
     t.string   "crystals"
     t.string   "mucus_threads"
+    t.integer  "patient_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.integer  "patient_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -186,17 +185,19 @@ ActiveRecord::Schema.define(version: 20170524120751) do
   end
 
   create_table "vdrl_tests", force: :cascade do |t|
-    t.text     "vdrl_test"
+    t.string   "vdrl_test"
+    t.integer  "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "widal_reaction_reports", force: :cascade do |t|
-    t.text     "salmonella_typhi_o"
-    t.text     "salmonella_typhi_h"
-    t.text     "salmonella_para_typhi_ah"
-    t.text     "salmonella_para_typhi_bh"
-    t.text     "smear_for_mp"
+    t.string   "salmonella_typhi_o"
+    t.string   "salmonella_typhi_h"
+    t.string   "salmonella_para_typhi_ah"
+    t.string   "salmonella_para_typhi_bh"
+    t.string   "smear_for_mp"
+    t.integer  "patient_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

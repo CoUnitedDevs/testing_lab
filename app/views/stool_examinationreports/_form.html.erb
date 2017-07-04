@@ -1,0 +1,233 @@
+<style>
+.report-line {
+  height: 0;
+  border-top: 1px solid maroon;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+}
+.report-line span {
+  display: inline-block;
+  position: relative;
+  padding: 0 17px;
+  background-color: maroon;
+  color: maroon;
+  top: -16px;
+  font-size: 20px;
+}
+</style>
+<div class=''>
+
+  <%= form_for( @stool_examinationreports, html: { :class => "form-horizontal" }) do |f| %>
+  <% if @stool_examinationreports.errors.any? %>
+  <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <ul>
+      <% @stool_examination_reports.errors.full_messages.each do |message| %>
+      <li style="color: white;"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="section">
+    <div class="row">
+      <div class="col-md-1" style="margin-top: 5px;">
+        <label>
+          Name:
+        </label>
+      </div>
+      <div class="col-md-3">
+        <label>
+          <%= text_field_tag :patient_name, @patient.name, :class => "form-control" %>
+          <!-- <input type="text" class="form-control" > -->
+        </label>
+      </div>
+      <div class="col-md-1" style="margin-top: 5px;">
+        Gender:
+      </div>
+      <div class="col-md-2">
+        <label style="margin-top: 5px;">Male</label><input type="radio" name="gender" value="male" <%= 'checked' if @patient.gender == "1" %>/>&nbsp;
+         <label style="margin-top: 5px;">Female  </label><input type="radio" name="gender" value="female" <%= 'checked' if @patient.gender == "2" %>/>
+      </div>
+      <div class="col-md-1" style="margin-top: 5px;">
+        Age:
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :age, @patient.age, :class => "form-control" %>
+        <!-- <select class = "form-control"><option>Select Age</option><select> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <div class="col-md-1" style="margin-top: 5px;">
+        <label>
+          Reffered By:
+        </label>
+      </div>
+      <div class="col-md-3">
+        <label>
+          <%= text_field_tag :referred_by, @patient.referred_by, :class => "form-control" %>
+        </label>
+      </div>
+      <div class="col-md-3" style="">
+        <input type="text" class="form-control has-feedback-left" id="single_cal4" placeholder="First Name" aria-describedby="inputSuccess2Status4">
+        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+        <span id="inputSuccess2Status4" class="sr-only">(success)</span>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+
+  <div class="report-line" id="spy6" align="center">
+    <span style="background-color: #fff;">Stool Examination Report</span>
+  </div>
+
+  <div class="panel-body col-xs-12">
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Color:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :color, nil, :class => "form-control" %>
+        </div>
+      </div>
+    </div><br/>
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Reaction:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :reaction, nil, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Viscosity:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :viscosity, nil, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Mocous:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :mocous, nil, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Blood:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :blood, nil, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Occult Blood:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :occult_blood, nil, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
+    <br/>
+
+    <div class="report-line" align="center">
+      <span style="background-color: #fff; font-size:13px; top: -11px;">MICROSCOPIC EXAMINATION</span>
+    </div><br/>
+
+    <div class="section">
+      <div class="row">
+        <div class="col-md-2" style="margin-top: 5px;">
+          <label>
+            Ova:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <%= text_field_tag :ova, nil, :class => "form-control" %>
+          </div>
+        </div>
+      </div><br/>
+      <div class="section">
+        <div class="row">
+          <div class="col-md-2" style="margin-top: 5px;">
+            <label>
+              Cyst:
+            </label>
+          </div>
+          <div class="col-md-6">
+            <%= text_field_tag :cyst, nil, :class => "form-control" %>
+            </div>
+          </div>
+        </div><br/>
+
+        <div class="section">
+          <div class="row">
+            <div class="col-md-2" style="margin-top: 5px;">
+
+            </div>
+            <div class="col-md-6" align="center">
+              <%= f.button class: "btn btn-success"%>
+              </div>
+            </div><br/>
+
+          </div>
+      <% end %>
+    </div>
+
+
+    <% content_for :custom_scripts_for_page do %>
+    <script type="text/javascript">
+
+    $(".datetime-field2").datetimepicker({
+      format: 'DD/MM/YYYY',
+      pickTime: false,
+      maxDate: '<%= DateTime.now.strftime("%d/%m/%Y") %>'
+    });
+
+    $('#student_admission').datetimepicker({
+      format: 'DD/MM/YYYY',
+      pickTime: false
+    });
+
+    $('#student-dob').datetimepicker({
+      format: 'DD/MM/YYYY',
+      pickTime: false
+    });
+
+    </script>
+    <% end %>

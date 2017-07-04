@@ -26,6 +26,7 @@
           <td><%= patient.try(:name) %></td>
           <td><%= patient.try(:patient_test) %></td>
           <td><a href = '<%= URLS[patient.patient_test] %>/?id=<%= patient.id %>'><font color="red">Un-Completed</font></a></td>
+          <!-- <td><a href = '<%#= URLS[patient.patient_test] %>'><font color="red">Un-Completed</font></a></td> -->
         </tr>
         <% end %>
       </tbody>

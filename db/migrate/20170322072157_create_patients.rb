@@ -7,7 +7,7 @@ class CreatePatients < ActiveRecord::Migration[5.0]
       t.date :present_date
       t.string :mobile_no
       t.string :referred_by
-
+      t.string :patient_test
       t.timestamps
     end
   end

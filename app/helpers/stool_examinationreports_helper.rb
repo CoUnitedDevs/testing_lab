@@ -1,0 +1,2 @@
+module StoolExaminationreportsHelper
+end

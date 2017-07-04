@@ -6,7 +6,7 @@ DEFAULT_COLOR = [
   { name: 'Orange'}
 ]
 
-URLS = { "URINE EXAMINATION REPORT" => '/urine_examination_reports/new', "C.B.P REPORT" => '/blood_examination_reports/new'}
+URLS = { "URINE EXAMINATION REPORT" => '/urine_examination_reports/new', "C.B.P REPORT" => '/blood_examination_reports/new', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/new'}
 
 PATIENT_TEST = [
   {
