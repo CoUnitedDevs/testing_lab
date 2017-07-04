@@ -28,30 +28,6 @@ ActiveRecord::Schema.define(version: 20170524120751) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "examination_reports", force: :cascade do |t|
-    t.string   "appearance"
-    t.string   "reaction"
-    t.string   "specific_gravity"
-    t.string   "phosphate"
-    t.string   "albumin"
-    t.string   "sugar"
-    t.string   "ketone_bodies"
-    t.string   "bile_salts"
-    t.string   "bile_pigments"
-    t.string   "urobilinogen"
-    t.string   "bence_jones_proteins"
-    t.string   "epithelial_cells"
-    t.string   "pus_cells"
-    t.string   "rbcs"
-    t.string   "casts"
-    t.string   "crystals"
-    t.string   "mucus_threads"
-    t.integer  "patient_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.text     "colour"
-  end
-
   create_table "gravindex_test_reports", force: :cascade do |t|
     t.text     "gravindex_test_report"
     t.datetime "created_at",            null: false
@@ -147,19 +123,6 @@ ActiveRecord::Schema.define(version: 20170524120751) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "patient_test"
-  end
-
-  create_table "stool_examination_reports", force: :cascade do |t|
-    t.string   "color"
-    t.string   "reaction"
-    t.string   "viscosity"
-    t.string   "mucous"
-    t.string   "blood"
-    t.string   "occult_blood"
-    t.string   "ova"
-    t.string   "cyst"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "stool_examinationreports", force: :cascade do |t|
