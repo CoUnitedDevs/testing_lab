@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :blood_examination_reports
   resources :patients
   resources :stool_examinationreports
+  resources :widal_reaction_reports
 end

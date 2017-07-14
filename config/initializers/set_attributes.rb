@@ -6,7 +6,7 @@ DEFAULT_COLOR = [
   { name: 'Orange'}
 ]
 
-URLS = { "URINE EXAMINATION REPORT" => '/urine_examination_reports/new', "C.B.P REPORT" => '/blood_examination_reports/new', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/new'}
+URLS = { "URINE EXAMINATION REPORT" => '/urine_examination_reports/new', "C.B.P REPORT" => '/blood_examination_reports/new', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/new', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/new', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/new' , "WIDAL + PARACHECK METHOD REPORT"=>'/widal_reaction_reports/new'}
 
 PATIENT_TEST = [
   {
