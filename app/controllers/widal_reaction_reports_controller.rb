@@ -12,7 +12,7 @@ def index
   	@widal_reaction_report = WidalReactionReport.new(widal_reaction_report_params)
     respond_to do |format|
       if @widal_reaction_report.save
-        format.html { redirect_to  widal_reaction_report_path(@widal_reaction_report), notice: ' successfully created.' }
+        format.html { redirect_to  patients_path, notice: ' successfully created.' }
       end
     end
   end
