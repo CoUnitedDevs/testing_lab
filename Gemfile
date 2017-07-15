@@ -74,4 +74,4 @@ group :test do
   gem 'ruby-prof'
 end
 
-ruby-2.3.0
+ruby '2.3.0'
