@@ -73,3 +73,5 @@ group :test do
   gem 'sqlite3'
   gem 'ruby-prof'
 end
+
+ruby-2.3.0
