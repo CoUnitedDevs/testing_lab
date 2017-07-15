@@ -131,6 +131,7 @@ GEM
     orm_adapter (0.5.0)
     parsley-rails (2.7.0.0)
       railties (>= 3.0.0)
+    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -229,6 +230,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  pg
   pry
   puma (~> 3.0)
   rails (~> 5.0.1)
@@ -246,4 +248,4 @@ DEPENDENCIES
   wkhtmltopdf-binary
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
