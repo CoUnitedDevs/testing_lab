@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>TestingLab</title>
+    <meta name="keywords" content="MonitorApp"/>
+    <meta name="description" content="MonitorApp">
+    <meta name="author" content="MonitorApp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <%= wicked_pdf_stylesheet_link_tag 'application' %>
+  </head>
+  <body style="min-height: 1000px; background-color: #fff;" class="<%= content_for :body_class %>">
+    <div style="padding: 15px;">
+      <%= yield %>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <%= wicked_pdf_javascript_include_tag 'application' %>
+  <!-- Include Date Range Picker -->
+  <!-- Scripts -->
+  <script type="text/javascript">
+    jQuery(document).ready(function () {
+      Docs.init();
+      // Init Tooltips
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+  <%= content_for :custom_scripts_for_page %>
+
+</body>
+</html>
