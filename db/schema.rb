@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410125010) do
+ActiveRecord::Schema.define(version: 20170720115751) do
 
   create_table "blood_examination_reports", force: :cascade do |t|
     t.string   "hemoglobin"
@@ -82,6 +82,14 @@ ActiveRecord::Schema.define(version: 20170410125010) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "patient_testurls", force: :cascade do |t|
+    t.integer  "patient_id"
+    t.string   "test_url"
+    t.string   "status",     default: "inactive"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
   create_table "patient_urine_examination_reports", force: :cascade do |t|
     t.integer  "patient_id"
     t.integer  "colour_id"
@@ -124,9 +132,9 @@ ActiveRecord::Schema.define(version: 20170410125010) do
     t.date     "present_date"
     t.string   "mobile_no"
     t.string   "referred_by"
-    t.string   "patient_test"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "patient_index"
   end
 
   create_table "stool_examinationreports", force: :cascade do |t|
@@ -141,6 +149,15 @@ ActiveRecord::Schema.define(version: 20170410125010) do
     t.integer  "patient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.integer  "patient_id"
+    t.string   "testable_type"
+    t.integer  "testable_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["testable_type", "testable_id"], name: "index_tests_on_testable_type_and_testable_id"
   end
 
   create_table "urine_examination_reports", force: :cascade do |t|

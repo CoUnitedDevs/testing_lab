@@ -1,2 +1,0 @@
-class PatientStoolExaminationReport < ApplicationRecord
-end

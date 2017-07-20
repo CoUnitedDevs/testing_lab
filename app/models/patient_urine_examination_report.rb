@@ -1,3 +1,0 @@
-class PatientUrineExaminationReport < ApplicationRecord
-  
-end

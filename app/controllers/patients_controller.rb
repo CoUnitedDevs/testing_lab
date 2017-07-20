@@ -2,8 +2,10 @@ class PatientsController < ApplicationController
   before_action :set_patient_id , only: [:show, :edit, :update, :destroy]
 
   def index
-    @patients = Patient.all
+    @patient_testurls = PatientTesturl.where(status: 'inactive')
+    # @patient = Patient.all
     # @patient_urls = PATIENT_URL
+    @tests = Test.all
   end
 
   def new
@@ -12,7 +14,11 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(patient_params)
+    @patient = Patient.create_with(patient_params).find_or_create_by(patient_index: params[:patient][:patient_index])
+    # @patient.patient_testurls << params[:patient][:test_urls]
+    params[:patient][:test_urls].each do |p|
+      PatientTesturl.create(patient_id: @patient.id, test_url: p)
+    end
     respond_to do |format|
       if @patient.save
         format.html { redirect_to patients_path}
