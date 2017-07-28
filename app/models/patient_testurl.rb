@@ -1,5 +1,5 @@
 class PatientTesturl < ApplicationRecord
   belongs_to :patient
-  belongs_to :test
+  has_many :tests, as: :testable
 
 end
