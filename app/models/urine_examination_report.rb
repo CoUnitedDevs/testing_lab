@@ -11,6 +11,6 @@ class UrineExaminationReport < ApplicationRecord
 
   def set_patient_test
     @patient = self.patient
-    @patient_test = @patient.patient_testurls.where(test_id: nil,test_url: 'URINE EXAMINATION REPORT').update(test_id: self.id,status: 'active')
+    @patient_test = @patient.patient_testurls.where(test_id: nil,test_url: 'URINE EXAMINATION REPORT').first.update(test_id: self.id,status: 'active')
   end
 end
