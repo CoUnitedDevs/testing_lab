@@ -7,6 +7,9 @@ DEFAULT_COLOR = [
 ]
 
 URLS = { "URINE EXAMINATION REPORT" => '/urine_examination_reports/new', "C.B.P REPORT" => '/blood_examination_reports/new', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/new' , "WIDAL + PARACHECK METHOD REPORT"=>'/widal_reaction_reports/new'}
+SHOWURLS = { "URINE EXAMINATION REPORT" => '/urine_examination_reports/', "C.B.P REPORT" => '/blood_examination_reports/', "STOOL EXAMINATION REPORT" => '/stool_examinationreports/' , "WIDAL + PARACHECK METHOD REPORT"=>'/widal_reaction_reports/'}
+
+# SHOWRRLS = {"StoolExaminationreport" => '/stool_examinationreports/', "WidalReactionReport" => '/widal_reaction_reports/'}
 
 PATIENT_TEST = [
   {

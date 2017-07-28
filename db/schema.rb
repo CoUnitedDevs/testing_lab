@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170720115751) do
 
   create_table "patient_testurls", force: :cascade do |t|
     t.integer  "patient_id"
+    t.integer  "test_id"
     t.string   "test_url"
     t.string   "status",     default: "inactive"
     t.datetime "created_at",                      null: false
