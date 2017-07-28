@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
     respond_to do |format|
       if @patient.save
         params[:patient][:test_urls].each do |p|
-          PatientTesturl.create(patient_id: @patient.id, test_url: p)
+          PatientTesturl.create(patient_id: @patient.id,test_id:1, test_url: p)
         end
         format.html { redirect_to patients_path}
       end

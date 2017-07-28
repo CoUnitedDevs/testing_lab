@@ -12,7 +12,7 @@ class WidalReactionReport < ApplicationRecord
 
 	def set_patient_test
 		@patient = self.patient
-		@patient_test = @patient.patient_testurls.where(test_id: nil,test_url: 'WIDAL + PARACHECK METHOD REPORT').update(test_id: self.id,status: 'active')
+		@patient_test = @patient.patient_testurls.where(test_id:1,test_url: 'WIDAL + PARACHECK METHOD REPORT').update(test_id: self.id,status: 'active')
 	end
 
 end
