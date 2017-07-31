@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :urine_examination_reports
   resources :blood_examination_reports
   resources :patients
-  resources :stool_examinationreports
+  resources :stool_examinationreports do
+    member do
+      get :stool_exam_pdf
+    end
+  end
   resources :widal_reaction_reports
 end

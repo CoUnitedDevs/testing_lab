@@ -19,25 +19,6 @@
 </style>
 <div class=''>
 
-  <div class="section">
-    <div class="row">
-      <div class="col-md-2" style="margin-top: 5px;">
-        <label>
-          Referred By:
-        </label>
-      </div>
-      <div class="col-md-3">
-        <label>
-          <%= @patient.referred_by %>
-        </label>
-      </div>
-      <div class="col-md-3" style="">
-
-      </div>
-    </div>
-  </div>
-  <br/>
-
 
   <div class="report-line" id="spy6" align="center">
     <span style="background-color: #fff;">Stool Examination Report</span>
@@ -150,15 +131,4 @@
             </div>
           </div>
         </div><br/>
-
-        <div class="section">
-          <div class="row">
-            <div class="col-md-2" style="margin-top: 5px;">
-
-            </div>
-            <div class="col-md-6">
-              <%= link_to "Print", stool_exam_pdf_stool_examinationreport_path(@stool_examinationreport),class: 'btn btn-primary' %>
-              </div>
-            </div>
-          </div><br/>
     </div>

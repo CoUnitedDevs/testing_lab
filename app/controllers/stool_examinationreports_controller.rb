@@ -1,6 +1,6 @@
 class StoolExaminationreportsController < ApplicationController
 
-    before_action :set_stool_examination_report, only: [:show, :edit, :update, :destroy]
+    before_action :set_stool_examination_report, only: [:show, :edit, :update, :destroy, :stool_exam_pdf]
 
   def index
 
@@ -35,6 +35,18 @@ class StoolExaminationreportsController < ApplicationController
 
    def destroy
    end
+
+   def stool_exam_pdf
+
+     respond_to do |format|
+       format.html do
+          format.pdf do
+            render pdf: "stool_exam",
+            layout: 'application.pdf.erb'
+          end
+        end
+      end
+    end
 
    private
 
