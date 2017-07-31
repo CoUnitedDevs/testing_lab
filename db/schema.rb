@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720115751) do
+ActiveRecord::Schema.define(version: 20170720112349) do
 
   create_table "blood_examination_reports", force: :cascade do |t|
     t.string   "hemoglobin"
@@ -80,15 +80,6 @@ ActiveRecord::Schema.define(version: 20170720115751) do
     t.integer  "cyst_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "patient_testurls", force: :cascade do |t|
-    t.integer  "patient_id"
-    t.integer  "test_id"
-    t.string   "test_url"
-    t.string   "status",     default: "inactive"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
   end
 
   create_table "patient_urine_examination_reports", force: :cascade do |t|

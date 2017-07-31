@@ -12,7 +12,7 @@ class BloodExaminationReport < ApplicationRecord
 
   def set_patient_test
     @patient = self.patient
-    @patient_test = @patient = self.patient.patient_testurl.where(test_id: nil,test_url: 'C.B.P REPORT').first.update(test_id: self.id,status: 'active')
+    @patient_test = @patient.patient_testurl.where(test_id: nil,test_url: 'C.B.P REPORT').first.update(test_id: self.id,status: 'active')
   end
 
 end
