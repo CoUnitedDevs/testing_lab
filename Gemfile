@@ -62,6 +62,9 @@ gem 'wicked_pdf'
 
 gem 'wkhtmltopdf-binary'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 #free theme
 gem 'gentelella-rails'
 

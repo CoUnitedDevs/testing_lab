@@ -16,12 +16,12 @@
   top: -16px;
   font-size: 20px;
 }
-</style>
 
+
+</style>
 <div class=''>
 
-  <%= form_for( @blood_examination_reports, html: { :class => "form-horizontal" }) do |f| %>
-  <% if @blood_examination_reports.errors.any? %>
+  <% if @blood_examination_report.errors.any? %>
   <div class="alert alert-danger alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <ul>
@@ -32,6 +32,7 @@
   </div>
   <% end %>
 
+
   <div class="section">
     <div class="row">
       <div class="col-md-1" style="margin-top: 5px;">
@@ -41,27 +42,31 @@
       </div>
       <div class="col-md-3">
         <label>
-          <%= f.hidden_field :patient_id, value: @patient.id %>
-          <%= @patient.name %>
+          <%=  %>
+          <!-- <input type="text" class="form-control" > -->
         </label>
       </div>
+
     </div>
   </div>
   <br/>
 
+
   <div class="report-line">
     <span style="background-color: #fff;">Blood Examination Report</span>
   </div>
+
   <div class="panel-body col-xs-12">
+
     <div class="row">
       <div class="col-md-3">
         <h4><b>
-          TEST FIELDS
+          TEST RANGE
         </b></h4>
       </div>
       <div class="col-md-4" align="center">
         <h4><b>
-          TEST RESULT
+          TEST RANGE
         </b></h4>
       </div>
       <div class="col-md-1">
@@ -81,7 +86,7 @@
           </b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :hemoglobin,class:'form-control'%>
+          <%= @blood_examination_report.hemoglobin%>
         </div>
         <div class="col-md-1">
           <label>gms(**%)</label>
@@ -100,24 +105,24 @@
           <b>Total R.B.C count:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :total_rbc_count,class:'form-control'%>
-        </div>
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-4">
+          <%=@blood_examination_report.total_rbc_count%>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-4">
           <label>Male:4.5-6.5 Mil/Cumm </label><br/>
           <label>Female:4.0-5.5 Mil/Cumm</label>
-        </div>
-      </div>
-    </div><br/>
+          </div>
+          </div>
+          </div><br/>
 
-    <div class="section">
-      <div class="row">
-        <div class="col-md-3">
+          <div class="section">
+          <div class="row">
+          <div class="col-md-3">
           <b>Total W.B.C count:</b>
-        </div>
-        <div class="col-md-4">
-          <%= f.text_field :total_wbc_count,class:'form-control'%>
+          </div>
+          <div class="col-md-4">
+          <%= @blood_examination_report.total_wbc_count %>
         </div>
         <div class="col-md-1">
         </div>
@@ -133,7 +138,7 @@
           <b>Total A.E count:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :ae_count,class:'form-control'%>
+          <%= @blood_examination_report.ae_count %>
         </div>
         <div class="col-md-1">
         </div>
@@ -149,7 +154,7 @@
           <b>Platelete count:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :platelet_count,class:'form-control'%>
+          <%= @blood_examination_report.platelet_count %>
         </div>
         <div class="col-md-1">
         </div>
@@ -173,7 +178,7 @@
           <b>Neutrophils:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :neutrophils,class:'form-control'%>
+          <%= @blood_examination_report.neutrophils %>
         </div>
         <div class="col-md-1">
         </div>
@@ -189,7 +194,7 @@
           <b>Lymphocytes:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :lymphocytes,class:'form-control'%>
+          <%= @blood_examination_report.lymphocytes %>
         </div>
         <div class="col-md-1">
         </div>
@@ -206,7 +211,7 @@
           <b>Esoniphils:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :eosinophils,class:'form-control'%>
+          <%= @blood_examination_report.eosinophils %>
         </div>
         <div class="col-md-1">
         </div>
@@ -222,7 +227,7 @@
           <b>Monocytes:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :monocytes,class:'form-control'%>
+          <%= @blood_examination_report.monocytes %>
         </div>
         <div class="col-md-1">
         </div>
@@ -238,7 +243,7 @@
           <b>Basophils:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :basophils,class:'form-control'%>
+          <%= @blood_examination_report.basophils %>
         </div>
         <div class="col-md-1">
         </div>
@@ -254,7 +259,7 @@
           <b>E.S.R:</b>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :esr,class:'form-control'%>
+          <%= @blood_examination_report.esr %>
         </div>
         <div class="col-md-1">
         </div>
@@ -264,21 +269,5 @@
         </div>
       </div>
     </div><br/>
-
-
-    <div class="section">
-      <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-4" align="center">
-          <%= f.submit class: "btn btn-success"%>
-        </div>
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-4">
-        </div>
-      </div>
-    </div>
   </div>
-  <% end %>
 </div>
