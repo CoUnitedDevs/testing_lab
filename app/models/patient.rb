@@ -9,4 +9,8 @@ class Patient < ApplicationRecord
   has_many :UrineExaminationReport
   has_many :VdrlTest
   has_many :WidalReactionReport
+
+
+   extend FriendlyId
+   friendly_id :name, use: :slugged
 end

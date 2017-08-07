@@ -19,6 +19,63 @@
 </style>
 <div class=''>
 
+    <div class="section">
+      <div class="row">
+        <div class="col-md-1" style="">
+          <label>
+            Name:
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label>
+            <u><%= @patient.name %></u>
+            <!-- <input type="text" class="form-control" > -->
+          </label>
+        </div>
+        <div class="col-md-1" style="">
+          Gender:
+        </div>
+        <div class="col-md-2">
+          <% if @patient.gender == '1' %>
+            <label>Male</label>
+            <%else%>
+            <label>Female</label>
+            <%end%>
+
+        </div>
+        <div class="col-md-1" style="">
+          Age:
+        </div>
+        <div class="col-md-2">
+            <%= @patient.age %>
+          <!-- <select class = "form-control"><option>Select Age</option><select> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="row">
+          <div class="col-md-1" style="margin-top: 5px;">
+            <label>
+              Reffered By:
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label>
+                <%= @patient.referred_by %>
+            </label>
+          </div>
+          <div class="col-md-1" style="">
+              <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+              <span id="inputSuccess2Status4" class="sr-only">(success)</span>
+          </div>
+          <div class="col-md-3" style="margin-top: 8px;">
+            <%= @patient.present_date %>
+          </div>
+        </div>
+      </div>
+  <br/>
+
 
   <div class="report-line" id="spy6" align="center">
     <span style="background-color: #fff;">Stool Examination Report</span>

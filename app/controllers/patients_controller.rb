@@ -30,6 +30,7 @@ class PatientsController < ApplicationController
   end
 
   def edit
+    @patient_tests = PATIENT_TEST
   end
 
   def update
@@ -43,11 +44,11 @@ class PatientsController < ApplicationController
   private
 
   def set_patient_id
-    @patient = Patient.find_by(params[:id])
+    @patient = Patient.friendly.find(params[:id])
   end
 
   def patient_params
-    params.require(:patient).permit(:name, :gender, :age, :present_date, :referred_by, :mobile_no, :patient_test)
+    params.require(:patient).permit(:name, :gender, :age, :present_date, :referred_by, :mobile_no, :patient_test, :slug)
   end
 
 end

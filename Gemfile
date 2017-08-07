@@ -70,6 +70,8 @@ gem 'gentelella-rails'
 
 gem 'pry'
 
+gem 'friendly_id', '~> 5.1.0'
+
 group :test do
   gem 'rails-perftest'
   # Use sqlite3 as the database for Active Record

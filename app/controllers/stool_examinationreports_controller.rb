@@ -22,7 +22,7 @@ class StoolExaminationreportsController < ApplicationController
   end
 
   def show
-    @patient = Patient.where(id: @stool_examinationreport.patient_id).first
+    @patient = @stool_examinationreport.patient
   end
 
   def edit
@@ -37,7 +37,7 @@ class StoolExaminationreportsController < ApplicationController
    end
 
    def stool_exam_pdf
-
+     @patient = @stool_examinationreport.patient
      respond_to do |format|
        format.html do
           format.pdf do

@@ -1,1 +1,87 @@
 <h1> Welcome </h1>
+
+<div class="section">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 5px;">
+      <label>
+        Patient Number:
+      </label>
+    </div>
+    <div class="col-md-4">
+      <%= @patient.patient_index %>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control has-feedback-left" id="single_cal4" placeholder="First Name" aria-describedby="inputSuccess2Status4">
+      <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+      <span id="inputSuccess2Status4" class="sr-only">(success)</span>
+    </div>
+  </div>
+</div><br/>
+<div class="section">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 5px;">
+      <label>
+        Patient Name:
+      </label>
+    </div>
+    <div class="col-md-4">
+      <%= @patient.name %>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-4">
+      <%#= @patient.pat %>
+    </div>
+  </div>
+</div><br/>
+<div class="section">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 5px;">
+      <label>
+        s/o|w/o:
+      </label>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div><br/>
+
+<div class="section">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 5px;">
+      <label>
+        Age:
+      </label>
+    </div>
+    <div class="col-md-4">
+      <%= @patient.age %>
+    </div>
+  </div>
+</div><br/>
+
+<div class="section">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 5px;">
+      <label>
+        Reffered By:
+      </label>
+    </div>
+    <div class="col-md-4">
+      <%= @patient.referred_by %>
+    </div>
+  </div>
+</div><br>
+<div class="section">
+  <div class="row">
+    <div class="col-md-2"></div>
+
+  </div>
+</div>
+
+<script>
+$('.select2_initializer').select2({
+  placeholder: "Select here"
+});
+</script>
