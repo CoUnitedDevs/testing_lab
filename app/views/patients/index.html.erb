@@ -2,17 +2,28 @@
   <div class="clearfix"></div>
   <div class="x_title"></div>
   <div class="x_content">
-
     <p id="notice"><%= notice %></p>
-    <h3 id="" class="page-header">Listing Patients
+    <div class="header">
+      <div class="title_right">
+        <div class="col-md-6 col-sm-6 col-xs-12 form-group pull-right top_search">
+          <label id="" class="page-header">Listing Patients</label>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
       <%#= link_to 'New Patient', new_manage_unit_path, :style => "top: -5px; position: relative;" , :class => "pull-right btn btn-primary btn-sm" %>
-    </h3>
-
-
     <table class="table table-stripped">
       <thead>
         <tr>
           <th>#</th>
+          <th>Number</th>
           <th>Patient Name</th>
           <th>Test Name</th>
           <th>status</th>
@@ -23,6 +34,7 @@
         <% @patient_testurls.each_with_index do |t, index | %>
         <tr>
           <td><%= index + 1 %></td>
+          <td><%= t.patient.patient_index %></td>
           <!-- <td> <a href = '<%#= edit_patient_path(t.patient.id) %>'><%#= t.patient.try(:name) %></a></td> -->
           <td><%= link_to t.patient.try(:name), edit_patient_path(t.patient) %></td>
           <td><%= t.test_url %></td>

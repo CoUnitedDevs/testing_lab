@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803132934) do
+ActiveRecord::Schema.define(version: 20170811092347) do
 
   create_table "blood_examination_reports", force: :cascade do |t|
     t.string   "hemoglobin"
@@ -150,6 +150,13 @@ ActiveRecord::Schema.define(version: 20170803132934) do
     t.integer  "patient_index"
     t.string   "slug"
     t.index ["slug"], name: "index_patients_on_slug", unique: true
+  end
+
+  create_table "somthings", force: :cascade do |t|
+    t.string   "so"
+    t.integer  "arun"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stool_examinationreports", force: :cascade do |t|
