@@ -39,7 +39,7 @@
           <td><%= link_to t.patient.try(:name), edit_patient_path(t.patient) %></td>
           <td><%= t.test_url %></td>
           <% if t.status == 'inactive' %>
-            <td><a href = '<%= URLS[t.test_url] + '/?id=' + "#{t.patient_id}" %>'+ ><font color="red">Un-Completed</font></a></td>
+            
           <% else %>
             <td><a href = '<%= SHOWURLS[t.test_url] + "#{t.test_id}" %> '><font color="green">Completed</font></a></td>
           <% end %>

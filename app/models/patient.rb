@@ -9,7 +9,7 @@ class Patient < ApplicationRecord
   has_many :UrineExaminationReport
   has_many :VdrlTest
   has_many :WidalReactionReport
-
+  has_paper_trail
 
    extend FriendlyId
    friendly_id :name, use: :slugged

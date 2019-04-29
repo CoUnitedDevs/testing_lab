@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811092347) do
+ActiveRecord::Schema.define(version: 20190404082913) do
 
   create_table "blood_examination_reports", force: :cascade do |t|
     t.string   "hemoglobin"
@@ -63,37 +63,6 @@ ActiveRecord::Schema.define(version: 20170811092347) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "patient_examination_reports", force: :cascade do |t|
-    t.integer  "patient_id"
-    t.integer  "hemoglobin_id"
-    t.integer  "total_rbc_count_id"
-    t.integer  "total_wbc_count_id"
-    t.integer  "ae_count_id"
-    t.integer  "platelet_count_id"
-    t.integer  "neutrophils_id"
-    t.integer  "lymphocytes_id"
-    t.integer  "eosinophils_id"
-    t.integer  "monocytes_id"
-    t.integer  "basophils_id"
-    t.integer  "esr_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  create_table "patient_stool_examination_reports", force: :cascade do |t|
-    t.integer  "patient_id"
-    t.integer  "color_id"
-    t.integer  "reaction_id"
-    t.integer  "viscosity_id"
-    t.integer  "mucous_id"
-    t.integer  "blood_id"
-    t.integer  "occult_blood_id"
-    t.integer  "ova_id"
-    t.integer  "cyst_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "patient_testurls", force: :cascade do |t|
     t.integer  "patient_id"
     t.integer  "test_id"
@@ -101,41 +70,6 @@ ActiveRecord::Schema.define(version: 20170811092347) do
     t.string   "status",     default: "inactive"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-  end
-
-  create_table "patient_urine_examination_reports", force: :cascade do |t|
-    t.integer  "patient_id"
-    t.integer  "colour_id"
-    t.integer  "appearance_id"
-    t.integer  "reaction_id"
-    t.integer  "specific_gravity_id"
-    t.integer  "phosphate_id"
-    t.integer  "albumin_id"
-    t.integer  "sugar_id"
-    t.integer  "ketone_bodies_id"
-    t.integer  "bile_salts_id"
-    t.integer  "bile_pigments_id"
-    t.integer  "urobilinogen_id"
-    t.integer  "bence_jones_proteins_id"
-    t.integer  "epithelial_cells_id"
-    t.integer  "pus_cells_id"
-    t.integer  "rbcs_id"
-    t.integer  "casts_id"
-    t.integer  "crystals_id"
-    t.integer  "mucus_threads_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "patient_widal_reaction_reports", force: :cascade do |t|
-    t.integer  "patient_id"
-    t.integer  "salmonella_typhi_o_id"
-    t.integer  "salmonella_typhi_h_id"
-    t.integer  "salmonella_para_typhi_ah_id"
-    t.integer  "salmonella_para_typhi_bh_id"
-    t.integer  "smear_for_mp_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -228,6 +162,16 @@ ActiveRecord::Schema.define(version: 20170811092347) do
     t.integer  "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "item_type",                     null: false
+    t.integer  "item_id",                       null: false
+    t.string   "event",                         null: false
+    t.string   "whodunnit"
+    t.text     "object",     limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
   create_table "widal_reaction_reports", force: :cascade do |t|

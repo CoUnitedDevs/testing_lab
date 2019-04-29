@@ -67,6 +67,9 @@ gem 'wkhtmltopdf-binary'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+# paper_trail
+gem 'paper_trail'
+
 #free theme
 gem 'gentelella-rails'
 
